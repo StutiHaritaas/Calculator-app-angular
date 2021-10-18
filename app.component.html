@@ -1,0 +1,31 @@
+<h1 style="text-align: center;">CALCULATOR</h1>
+<div style="text-align: center;">
+<input placeholder="NUM1" #num1>
+<input placeholder="NUM2" #num2>
+</div>
+<div style="text-align: center;" >
+<appaddition [num1]="num1.value" [num2]="num2.value" (sendAddition)="getResult($ev
+ent)" style="display: inline-block;"></app-addition>
+<appsubtraction [num1]="num1.value" [num2]="num2.value" (sendSubtraction)="getResu
+lt($event)" style="display: inline-block;"></app-subtraction>
+<appmultiplication [num1]="num1.value" [num2]="num2.value" (sendMultiplication)="g
+etResult($event)" style="display: inline-block;"></app-multiplication>
+<appdivision [num1]="num1.value" [num2]="num2.value" (sendDivision)="getResult($ev
+ent)" style="display: inline-block;"></app-division>
+</div>
+<h2 style="text-align: center;">RESULT={{res1}}</h2>
+<div style="text-align: center;">
+<input placeholder="NUM3" #num3>
+</div>
+<div style="text-align: center;">
+<appfactorial [num3]="num3.value" (sendFactorial)="getResult2($event)" style="display:inline-block;"></app-factorial>
+<appprime [num3]="num3.value" (sendPrime)="getResult2($event)" style="display:inli
+ne-block;"></app-prime>
+</div>
+<div [ngSwitch]="res2">
+
+<h2 style="text-align: center;" *ngSwitchCase="0">Check Prime:Not a Prime!</h2>
+<h2 style="text-align: center;" *ngSwitchCase="1">Check Prime:Prime Number!</h2>
+<h2 style="text-align: center;" *ngSwitchDefault>Factorial:{{res2}}</h2>
+</div>
+<ng-template #other_content>other content here...</ng-template>    
